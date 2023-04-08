@@ -10,7 +10,10 @@ pipeline {
             steps {
                 // 使用maven步骤执行Maven命令
                 maven {
-                    goals 'clean', 'package'
+                   goals 'clean', 'package'
+                   mavenOpts '-Xmx1g'
+                   mavenInstallation 'Maven3.8.3'
+                   pom 'pom.xml'
                 }
             }
         }
